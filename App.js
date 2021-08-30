@@ -1,13 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, Image, SafeAreaView, View, Dimensions } from 'react-native';
+import VeiwImageScreen from './app/screens/VeiwImageScreen';
+import WelcomeScreen from './app/screens/WelcomeScreen';
 
 export default function App() {
+
+  console.log(Dimensions.get("screen"))
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <WelcomeScreen />
+    // <VeiwImageScreen />
   );
 }
 
