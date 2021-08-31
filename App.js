@@ -1,21 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, Image, SafeAreaView, View, Dimensions } from 'react-native';
+import { Text, Image, SafeAreaView, View, } from 'react-native';
 
 import VeiwImageScreen from './app/screens/VeiwImageScreen';
 import WelcomeScreen from './app/screens/WelcomeScreen';
 import AppText from './app/components/AppText';
+import AppButton from './app/components/AppButton';
 
 export default function App() {
-
-  console.log(Dimensions.get("screen"))
   return (
-    <SafeAreaView>
-   <AppText>I loveReact Native!</AppText>
-    </SafeAreaView>
+   <WelcomeScreen></WelcomeScreen>
   );
 }
 
-const styles = StyleSheet.create({
-
-});
