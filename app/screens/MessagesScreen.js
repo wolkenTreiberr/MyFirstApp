@@ -1,10 +1,12 @@
-import React from 'react';
-import { FlatList, StyleSheet } from 'react-native';
+import React, { useState } from 'react';
+import { FlatList, StyleSheet, View } from 'react-native';
 
 import ListItem from '../components/ListItem';
+import ListItemDeleteAction from '../components/ListItemDeleteAction';
+import ListItemSeparator from '../components/ListItemSeparator';
 import Screen from '../components/Screen';
 
-const massages = [
+const initialMassages = [
     {
         id: 1,
         title: 'Old Rusty Pitchfork',
@@ -26,16 +28,33 @@ const massages = [
 ]
 
 function MessagesScreen(props) {
+    const [messages, setMessages] = useState(initialMassages);
+    const [refreshing, setRefreshing] = useState(false)
+
+    const handleDelete = message => {
+       setMessages(messages.filter(m => m.id !== message.id));
+    }
     return (
         <Screen>
             <FlatList 
-            data={massages} 
+            data={messages} 
             keyExtractor={massage => massage.id.toString()} 
             renderItem={({ item }) => 
             <ListItem 
             title={item.title}
             subTitle={item.description}
-            image={item.image}/>}/>
+            image={item.image}
+            onPress={() => console.log('tapped on message', item)}
+            renderRightActions={() => (
+            <ListItemDeleteAction onPress={() => handleDelete(item)}/>
+            )}
+            />}
+            ItemSeparatorComponent={ListItemSeparator}
+            refreshing={refreshing}
+            onRefresh={() => {
+                setMessages(initialMassages)
+            }}
+            />
         </Screen>
     );
 }
