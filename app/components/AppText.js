@@ -3,9 +3,9 @@ import { Text } from 'react-native';
 
 import Appstyles from './Appstyles';
 
-function AppText({children}) {
+function AppText({children, style}) {
     return (
-        <Text style={Appstyles.text}>{children}</Text>
+        <Text style={[Appstyles.text, style]}>{children}</Text>
     );
 }
 
