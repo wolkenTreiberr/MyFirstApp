@@ -1,17 +1,21 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { Text, Image, SafeAreaView, View, } from 'react-native';
+import { View } from 'react-native';
 
-import VeiwImageScreen from './app/screens/VeiwImageScreen';
-import WelcomeScreen from './app/screens/WelcomeScreen';
-import AppText from './app/components/AppText';
-import AppButton from './app/components/AppButton';
-import Card from './app/components/Card';
-import ListingDetailsScreen from './app/screens/ListingDetailsScreen';
+import Screen from './app/components/Screen';
+import colors from './app/config/colors';
+import MessagesScreen from './app/screens/MessagesScreen';
 
 export default function App() {
   return (
-    <ListingDetailsScreen></ListingDetailsScreen>
+    <Screen>
+      <Icon
+      name="email"
+      size={50}
+      backgroundColor="red"
+      iconColor={colors.white}
+      />
+    </Screen>
   );
 }
 
