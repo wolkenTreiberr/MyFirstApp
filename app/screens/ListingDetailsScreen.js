@@ -4,7 +4,7 @@ import { Image, View, StyleSheet } from 'react-native';
 import ListItem from '../components/ListItem';
 import AppText from '../components/AppText';
 import colors from '../config/colors';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
+
 
 function ListingDetailsScreen(props) {
     return (
